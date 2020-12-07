@@ -17,7 +17,6 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-
 export interface IStartPageProps {
     skipDefault?: boolean;
     baseTheme: string;
@@ -118,7 +117,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
 
                 <div className="row" style={{marginBottom: 25}}>
                     <div className="checkContainer">
-                        <div className="numberCircle">1</div>
+                        <FontAwesomeIcon className="check-icon" icon={faCheckSquare} size="4x"/>
                     </div>
                     <div className="block">
                         <div>
@@ -159,7 +158,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
 
                 <div className="row" style={{marginBottom: 25}}>
                     <div className="checkContainer">
-                        <div className="numberCircle">2</div>
+                        <FontAwesomeIcon className="check-icon" icon={faCheckSquare} size="4x"/>
                     </div>
                     <div className="block">
                         <div>
@@ -201,7 +200,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
 
                 <div className="row">
                     <div className="checkContainer">
-                        <div className="numberCircle">3</div>
+                        <FontAwesomeIcon className="check-icon" icon={faSquare} size="4x"/>
                     </div>
                     <div className="block">
                         <div>
@@ -256,7 +255,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
                 {this.state.showMenu &&
                 <div>
                     <div className="row">
-                        <Tabs value={this.state.value} onChange={this.handleChange}>
+                        <Tabs value={this.state.value} onChange={this.handleChange} indicatorColor="secondary">
                             <Tab label={
                                 <div>
                                     <div className="block">
@@ -319,7 +318,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
                                 <a>Data Science tutorial</a>
                             </div>
                             <div style={{marginBottom: 10, marginTop: 10}}>
-                                <a>TBD</a>
+                                <a>Python extension documentation</a>
                             </div>
                         </TabPanel>
                         <TabPanel value={this.state.value} index={3}>

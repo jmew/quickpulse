@@ -16,6 +16,7 @@ import { faPlus, faChevronDown, faFlask, faGlobe, faGraduationCap, faCog } from 
 import Tooltip from '@material-ui/core/Tooltip';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import { Alert } from '@material-ui/lab';
 
 
 export interface IStartPageProps {
@@ -110,6 +111,11 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
                     </div>
                 </div>
 
+                <Alert severity="warning" style={{maxWidth: 600}}>
+                    <div style={{marginBottom:15}}>The Python Extension requires Python to be installed.  Install Python from <a>python.org</a> to use the Python extension.</div>
+                    <a>I’ve installed Python already.</a>
+                </Alert>
+
                 <div className="row" style={{minHeight: 0}}>
                     <div className="headingText">
                         Setup your Python project
@@ -118,7 +124,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
 
                 <div className="row" style={{marginBottom: 25}}>
                     <div className="checkContainer">
-                        <div className="numberCircle">1</div>
+                        <FontAwesomeIcon className="check-icon" icon={faCheckSquare} size="4x"/>
                     </div>
                     <div className="block">
                         <div>
@@ -159,7 +165,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
 
                 <div className="row" style={{marginBottom: 25}}>
                     <div className="checkContainer">
-                        <div className="numberCircle">2</div>
+                        <FontAwesomeIcon className="check-icon" icon={faCheckSquare} size="4x"/>
                     </div>
                     <div className="block">
                         <div>
@@ -201,7 +207,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
 
                 <div className="row">
                     <div className="checkContainer">
-                        <div className="numberCircle">3</div>
+                        <FontAwesomeIcon className="check-icon" icon={faSquare} size="4x"/>
                     </div>
                     <div className="block">
                         <div>

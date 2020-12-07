@@ -14,7 +14,9 @@ export enum ImageName {
     Interactive,
     Python,
     PythonColor,
-    OpenFolder
+    OpenFolder,
+    Github,
+    Plus
 }
 
 // All of the images must be 'require' so that webpack doesn't rewrite the import as requiring a .default.
@@ -39,6 +41,14 @@ const images: { [key: string]: { light: string; dark: string } } = {
     OpenFolder: {
         light: require('./images/StartPage/OpenFolder.svg'),
         dark: require('./images/StartPage/OpenFolder-inverse.svg')
+    }, 
+    Github: {
+        light: require('./images/StartPage/github-brands.svg'),
+        dark: require('./images/StartPage/github-brands.svg')
+    },
+    Plus: {
+        light: require('./images/StartPage/plus-solid.svg'),
+        dark: require('./images/StartPage/plus-solid.svg')
     }
 };
 

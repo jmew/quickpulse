@@ -32,6 +32,7 @@ export namespace StartPageMessages {
     export const OpenFileBrowser = 'OpenFileBrowser';
     export const OpenFolder = 'OpenFolder';
     export const OpenWorkspace = 'OpenWorkspace';
+    export const CloneRepo = 'CloneRepo';
 }
 
 export class IStartPageMapping {

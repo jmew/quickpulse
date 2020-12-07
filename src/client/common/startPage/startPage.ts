@@ -98,6 +98,12 @@ export class StartPage extends WebviewPanelHost<IStartPageMapping>
         return undefined;
     }
 
+    public async showStartPageClosedPrompt() {
+        await this.appShell.showInformationMessage(
+            "Tip: You can open the start page again anytime by opening the command palette and searching for 'Python: Open Start Page'"
+        );
+    }
+
     public async close(): Promise<void> {
         if (!this.actionTaken) {
             sendTelemetryEvent(Telemetry.StartPageClosedWithoutAction);
@@ -107,6 +113,7 @@ export class StartPage extends WebviewPanelHost<IStartPageMapping>
         }
         sendTelemetryEvent(Telemetry.StartPageTime, this.timer.elapsedTime);
         // Fire our event
+        await this.showStartPageClosedPrompt();
         this.closedEvent.fire(this);
     }
 

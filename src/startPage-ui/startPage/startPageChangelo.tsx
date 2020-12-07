@@ -10,12 +10,10 @@ import { getLocString } from '../react-common/locReactSide';
 import { IMessageHandler, PostOffice } from '../react-common/postOffice';
 import './startPage.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faPython, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faFolder, faCheckSquare, faSquare } from '@fortawesome/free-regular-svg-icons';
-import { faPlus, faChevronDown, faFlask, faGlobe, faGraduationCap, faCog } from '@fortawesome/free-solid-svg-icons';
-import Tooltip from '@material-ui/core/Tooltip';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faFlask, faGlobe, faGraduationCap, faCog } from '@fortawesome/free-solid-svg-icons';
 
 
 export interface IStartPageProps {
@@ -58,12 +56,12 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
         super(props);
 
         this.state = {
-            showMenu: false,
-            value: 0,
+            showMenu: true,
         }
 
         this.showFeatures = this.showFeatures.bind(this);
         this.handleChange = this.handleChange.bind(this);
+
     }
 
     public componentDidMount() {
@@ -92,8 +90,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
     }
 
     public render() {
-        // tslint:disable: react-a11y-anchorr
-
+        // tslint:disable: react-a11y-anchors
         return (
             <div className="main-page">
                 <div className="title-row">
@@ -106,139 +103,17 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
                     </div>
                     <div style={{"display": "inline-block"}}>
                         <div className="title">{getLocString('StartPage.pythonExtensionTitle', 'Welcome to the Python Extension')}</div>
-                        <div>Checkout our <a>changelog</a> to see whats new!</div>
-                    </div>
-                </div>
-
-                <div className="row" style={{minHeight: 0}}>
-                    <div className="headingText">
-                        Setup your Python project
-                    </div>
-                </div>
-
-                <div className="row" style={{marginBottom: 25}}>
-                    <div className="checkContainer">
-                        <div className="numberCircle">1</div>
-                    </div>
-                    <div className="block">
-                        <div>
-                            <div className="block">
-                                <Tooltip title={
-                                <div>
-                                    <div>1. Open the command palette: ⌘ + ⇧ + P </div>
-                                    <div>2. Search for “Git: Clone”</div>
-                                </div>
-                                } placement="right" arrow>
-                                    <div className="button">
-                                        <FontAwesomeIcon className="icon" icon={faGithub} size="lg"/>
-                                        <div className="button-text" onClick={this.openBlankNotebook} role="button">
-                                            {getLocString('StartPage.CreateJupyterNotebook', 'Clone a repository')}
-                                        </div>
-                                    </div>
-                                </Tooltip>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="block">
-                                <Tooltip title={
-                                    <div>
-                                        <div>Use the shortcut: ⌘ + O</div>
-                                    </div>
-                                    } placement="right" arrow>
-                                <div className="button">
-                                    <FontAwesomeIcon className="icon" icon={faFolder} size="lg"/>
-                                    <div className="button-text" onClick={this.openFileBrowser} role="button">
-                                        {getLocString('StartPage.CreateJupyterNotebook', 'Open a folder/workspace')}
-                                    </div>
-                                </div>
-                                </Tooltip>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="row" style={{marginBottom: 25}}>
-                    <div className="checkContainer">
-                        <div className="numberCircle">2</div>
-                    </div>
-                    <div className="block">
-                        <div>
-                            <div className="block">
-                                <Tooltip title={
-                                    <div>
-                                        <div>1. Open the command palette: ⌘ + ⇧ + P</div>
-                                        <div>2. Search for “Python: Create new Python environment”</div>
-                                    </div>
-                                    } placement="right" arrow>
-                                    <div className="button">
-                                        <FontAwesomeIcon className="icon" icon={faPlus} size="lg"/>
-                                        <div className="button-text" onClick={this.openBlankNotebook} role="button">
-                                            {getLocString('StartPage.CreateJupyterNotebook', 'Create a new Python Environment')}
-                                        </div>
-                                    </div>
-                                </Tooltip>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="block">
-                                <Tooltip title={
-                                    <div>
-                                        <div>1. Open the command palette: ⌘ + ⇧ + P</div>
-                                        <div>2. Search for “Python: Select an existing Python interpreter”</div>
-                                    </div>
-                                    } placement="right" arrow>
-                                    <div className="button">
-                                        <FontAwesomeIcon className="icon" icon={faPython} size="lg"/>
-                                        <div className="button-text" onClick={this.openBlankNotebook} role="button">
-                                            {getLocString('StartPage.CreateJupyterNotebook', 'Select an existing Python interpreter')}
-                                        </div>
-                                    </div>
-                                </Tooltip>
-                            </div>
-                        </div>
+                        <div>December 2020 Update</div>
                     </div>
                 </div>
 
                 <div className="row">
-                    <div className="checkContainer">
-                        <div className="numberCircle">3</div>
-                    </div>
-                    <div className="block">
-                        <div>
-                            <div className="block">
-                                <Tooltip title={
-                                    <div>
-                                        <div>1. Open the command palette: ⌘ + ⇧ + P</div>
-                                        <div>2. Search for “Python: Create new Python file”</div>
-                                    </div>
-                                    } placement="right" arrow>
-                                    <div className="button">
-                                        <FontAwesomeIcon className="icon" icon={faPlus} size="lg"/>
-                                        <div className="button-text" onClick={this.createPythonFile} role="button">
-                                            {getLocString('StartPage.CreateJupyterNotebook', 'Create a new Python file')}
-                                        </div>
-                                    </div>
-                                </Tooltip>
-                            </div>
-                        </div>
-                        <div>
-                            <div className="block">
-                                <Tooltip title={
-                                    <div>
-                                        <div>1. Open the command palette: ⌘ + ⇧ + P</div>
-                                        <div>2. Search for “Python: Create a new Jupyter notebook”</div>
-                                    </div>
-                                    } placement="right" arrow>
-                                    <div className="button">
-                                        <FontAwesomeIcon className="icon" icon={faPlus} size="lg"/>
-                                        <div className="button-text" onClick={this.openBlankNotebook} role="button">
-                                            {getLocString('StartPage.CreateJupyterNotebook', 'Create a new Jupyter notebook')}
-                                        </div>
-                                    </div>
-                                </Tooltip>
-                            </div>
-                        </div>
-                    </div>
+                    <div style={{marginTop: 20, marginBottom: 15}}>The December release of the Python 🐍 extension is here! Exciting updates:</div>
+                    <div>- Gather, our new extension for Jupyter notebook clean up 🧹</div>
+                    <div>- Contextual highligthing 🌟 with Pylance </div>
+                    <div style={{marginBottom: 15}}>- Exporting notebooks 📒 to HTML and PDF</div>
+                    <div style={{marginBottom: 15}}>...and more! </div>
+                    <div>If you’re interested, you can check the full list of improvements in our <a>changelog</a>. </div>
                 </div>
 
                 <div className="row" style={{minHeight: 0, marginTop: 40}}>
@@ -247,16 +122,12 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
                             Explore the Python extension features
                         </div>
                     </div>
-                    <div className="block">
-                        <FontAwesomeIcon className="icon showFeatures" icon={faChevronDown} onClick={this.showFeatures} size="2x"
-                        style={{paddingTop: 17, paddingBottom: 20}}/>
-                    </div>
                 </div>
 
                 {this.state.showMenu &&
                 <div>
                     <div className="row">
-                        <Tabs value={this.state.value} onChange={this.handleChange}>
+                        <Tabs value={this.state.value} onChange={this.handleChange} indicatorColor="secondary">
                             <Tab label={
                                 <div>
                                     <div className="block">
@@ -319,7 +190,7 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
                                 <a>Data Science tutorial</a>
                             </div>
                             <div style={{marginBottom: 10, marginTop: 10}}>
-                                <a>TBD</a>
+                                <a>Python extension documentation</a>
                             </div>
                         </TabPanel>
                         <TabPanel value={this.state.value} index={3}>
@@ -380,7 +251,9 @@ export class StartPage extends React.Component<IStartPageProps, any> implements 
     };
 
     public showFeatures() {
+        console.log(this.state.showMenu);
         this.setState({showMenu: !this.state.showMenu});
+        console.log(this.state.showMenu);
     };
 
     // tslint:disable-next-line: no-any
