@@ -94,11 +94,11 @@
                 "id": "pythonWelcome",
                 "title": "Get started with Python development",
                 "description": "Your first steps to set up a Python project with all the powerful tools and features that the Python extension has to offer!",
-                "tasks": [
+                "steps": [
                     {
                         "id": "python.installPython",
                         "title": "Install Python",
-                        "description": "The Python Extension requires Python to be installed. Install Python from [python.org](https://www.python.org) to use the Python extension.\n \nAfter installing Python, come back here and confirm.\n[I've just installed Python!](command:workbench.action.reloadWindow)",
+                        "description": "The Python Extension requires Python to be installed. Install Python from [python.org](https://www.python.org) to use the Python extension.\n \n[Install Python](command:workbench.action.reloadWindow)",
                         "media": {
                             "path": "images/OpenOrCreateNotebook.gif",
                             "altText": "open a folder or create a python project"
@@ -178,7 +178,75 @@
                         }
                     }
                 ]
-            }
+            },
+            {
+                "id": "pythonDataScienceWelcome",
+                "title": "Get started with Python Data Science",
+                "description": "Your first steps to getting started with a Python Data Science project!",
+                "steps": [
+                    {
+                        "id": "python.installPython",
+                        "title": "Install Python",
+                        "description": "The Python Extension requires Python to be installed. Install Python from [Anaconda](https://www.anaconda.com) to use the Python extension.\n \n[Install Python with Anaconda](command:workbench.action.reloadWindow)",
+                        "media": {
+                            "path": "images/OpenOrCreateNotebook.gif",
+                            "altText": "open a folder or create a python project"
+                        },
+                        "when": ""
+                    },
+                    {
+                        "id": "python.openFolderMac",
+                        "title": "Open or Create a new Python project",
+                        "description": "If you already have an existing Python project on your machine:\n[Open Folder](command:workbench.action.files.openFileFolder)\n \nIf you want to create a new Python project from scratch:\n[Create new Project](command:python.createProject)\n \nIf you would like to clone a Python project from GitHub:\n[Clone a Git repository](command:git.clone)",
+                        "media": {
+                            "path": "images/OpenOrCreateNotebook.gif",
+                            "altText": "open a folder or create a python project"
+                        },
+                        "doneOn": {"command": "workbench.action.files.openFileFolder"},
+                        "when": "isMac && workspaceFolderCount == 0"
+                    },
+                    {
+                        "id": "python.openFolder",
+                        "title": "Open or create a new Python project",
+                        "description": "To start, open a Python folder/project.\nIf you already have an existing Python project on your machine:\n[Open Folder](command:workbench.action.files.openFolder)\n \nIf you want to create a new Python project from scratch:\n[Create new Project](command:python.createProject)\n \nIf you would like to clone a Python project from GitHub:\n[Clone a Git repository](command:git.clone)",
+                        "media": {
+                            "path": "images/OpenOrCreateNotebook.gif",
+                            "altText": "open a folder or create a python project"
+                        },
+                        "doneOn": {"command": "workbench.action.files.openFolder"},
+                        "when": "!isMac && workspaceFolderCount == 0"
+                    },
+                    {
+                        "id": "python.createNewNotebook",
+                        "title": "Create a new Jupyter Notebook",
+                        "description": "To create a new Jupyter Notebook, you can right click in the file explorer and create a new file with an .ipynb extension anytime.\n \nAlternatively, you can open the [Command Palette](command:workbench.action.showCommands) and run the command \n``Jupyter: Create New Blank Notebook``.\n[Create new Jupyter Notebook](command:toSide:jupyter.createnewnotebook)",
+                        "media": {
+                            "path": "images/OpenOrCreateNotebook.gif",
+                            "altText": "creating a new jupyter notebook"
+                        },
+                        "doneOn": {"command": "jupyter.createnewnotebook" }
+                    },
+                    {
+                        "id": "python.openInteractiveWindow",
+                        "title": "Open the Python Interactive Window",
+                        "description": "The Python Interactive Window is a Python shell where you can execute and view the results of your Python code. You can create cells on a Python file by typing ``#%%``.\n \nTo open the interactive window anytime, open the [Command Palette](command:workbench.action.showCommands) and run the command \n``Jupyter: Create Interactive Window``.\n[Open Interactive Window](command:toSide:jupyter.createnewinteractive)",
+                        "media": {
+                            "path": "images/OpenOrCreateNotebook.gif",
+                            "altText": "opening python interactive window"
+                        },
+                        "doneOn": {"command": "jupyter.createnewinteractive" }
+                    },
+                    {
+                        "id": "python.learnMore",
+                        "title": "Learn more",
+                        "description": "• [Explore](command:pythonCommands) all the features the Python extension has to offer.\n• [Signup](https://aka.ms/AAAbopxr) for tips and tutorials through our mailing list.\n• Explore more features in our [Tutorials](https://aka.ms/AA8dqti) or check [Documentation](https://aka.ms/AA8dxwy) for tips and troubleshooting.\n• Take a look at our [Release Notes](https://aka.ms/AA8dxtb) to learn more about the latest features.",
+                        "media": {
+                            "path": "images/OpenOrCreateNotebook.gif",
+                            "altText": "opening the command palette to look at python commands"
+                        }
+                    }
+                ]
+            }              
         ],
         "snippets": [
             {
